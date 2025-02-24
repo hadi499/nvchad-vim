@@ -33,6 +33,24 @@ lspconfig.tailwindcss.setup {
   capabilities = nvlsp.capabilities,
 }
 
+lspconfig.volar.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  init_options = {
+    vue = {
+      -- disable hybrid mode
+      hybridMode = false,
+    },
+    typescript = {
+      -- replace with your global TypeScript library path
+      tsdk = '/home/hadi/.nvm/versions/node/v20.18.2/lib/node_modules/typescript/lib'
+    }
+  },
+}
+
+
 lspconfig.emmet_ls.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
